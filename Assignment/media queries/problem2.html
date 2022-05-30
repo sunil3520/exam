@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         #nav{
+            width: 95%;
+            margin: auto;
+            margin-bottom: 25px;
+            display: grid;
+            
+            background-color: yellow;
+            margin-top: 30px;
+            justify-content:flex-start;
+            font-size: 50px;
+            padding-left: 10px;
+            padding-bottom: 20px;
+            
+        }
+        #body{
+            width: 95%;
+            border: 1px solid blue;
+            margin:auto;
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: repeat(3,180px);
+            gap: 25px;
+            
+            grid-template-areas:
+            "rd rd ."
+            "rd rd ."
+            "rd rd ."
+        }
+        #body>div:first-child{
+            background-color: red;
+            grid-area: rd;
+        }
+        #body>div:nth-child(2){
+            background-color: green;
+            /* grid-area: grn; */
+        }
+        #body>div:nth-child(3){
+            background-color: green;
+            /* grid-area: grn; */
+        }
+        #body>div:nth-child(4){
+            background-color: green;
+            /* grid-area: grn; */
+        }
+        /* For medium screen */
+        @media all and (min-width:720px) and (max-width:1024px){
+            #nav{
+                width: 100%;
+                
+            }
+            #body{
+            width:100%;
+           border: 1px solid red;
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: repeat(3,130px);
+            gap: 25px;
+            justify-content: left;
+            
+            grid-template-areas:
+            "rd rd rd"
+            "rd rd rd"
+            ". . ."
+        }
+        }
+        /* For small screen */
+        @media all and (min-width:320px) and (max-width:719px){
+            #body{
+            width: 100%;
+            
+           
+            grid-template-columns: repeat(1,1fr);
+            grid-template-rows: repeat(5,100px);
+            gap: 25px;
+            
+            grid-template-areas:
+            "rd"
+            "rd"
+            "."
+            "."
+            "."
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="nav">Navigation</div>
+    <div id="body">
+        <div>LEFT BOX</div>
+        <div>RIGHT BOX 1</div>
+        <div>RIGHT BOX 2</div>
+        <div>RIGHT BOX 3</div>
+    </div>
+</body>
+</html>
